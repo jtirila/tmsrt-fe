@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TournamentService } from '../services/tournament.service';
 
 @Component({
   selector: 'app-tournament-list',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tournament-list.component.sass']
 })
 export class TournamentListComponent implements OnInit {
-
-  constructor() { }
+  tournaments; 
+  constructor(private tournamentService: TournamentService) { }
 
   ngOnInit(): void {
+    // this.tournaments = 
+  }
+
+  getTournaments() {
+    this.tournaments = this.tournamentService.getAll();
   }
 
 }
