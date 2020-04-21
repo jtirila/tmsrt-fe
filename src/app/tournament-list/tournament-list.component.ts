@@ -11,11 +11,10 @@ export class TournamentListComponent implements OnInit {
   constructor(private tournamentService: TournamentService) { }
 
   ngOnInit(): void {
-    // this.tournaments = 
+    this.getTournaments();
   }
 
   getTournaments() {
-    this.tournaments = this.tournamentService.getAll();
-  }
-
+      this.tournaments = this.tournamentService.getAll();
+  };
 }
