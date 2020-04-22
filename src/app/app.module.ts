@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TournamentListComponent } from './tournament-list/tournament-list.component';
+import { TournamentDetailsComponent } from './tournament-details/tournament-details.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TournamentListComponent
+    TournamentListComponent,
+    TournamentDetailsComponent
   ],
   imports: [
     BrowserModule,

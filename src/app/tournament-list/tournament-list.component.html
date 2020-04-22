@@ -1,7 +1,5 @@
-<p>tournament-list works!</p>
-
-<h1>Tournaments</h1>
+<h2>Tournaments</h2>
 
 <div *ngFor="let tournament of tournaments | async">
-  <p>{{ tournament.name }}</p>
+  <a [title]="tournament.name + 'details'" [routerLink]="['/tournaments', tournament._id]">{{ tournament.name }}</a>
 </div>
