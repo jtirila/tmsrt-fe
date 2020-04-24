@@ -1,3 +1,26 @@
+
 <div *ngIf="tournamentObservable | async as tournament">
-<h2>{{ tournament.name }}</h2>
+  <h2>{{ tournament.name }}</h2>
+  <p>{{ tournament.location }} {{ tournament.startsAt | date:'short' }}</p>
+
+  <div *ngIf="tournament.games.length > 0">
+    <h3>Games</h3>
+    <p><strong>Note:</strong> Looks dead ugly, just fooling around with Sass & the data.
+    <table>
+      <thead>
+	<td>Starts at</td>
+	<td>Home Team</td>
+	<td>Home Team Goals</td>
+	<td>Road Team Goals</td>
+	<td>Road Team</td>
+      </thead>
+      <tr *ngFor="let game of tournament.games">
+        <td>{{ game.startsAt | date:'shortTime' }}</td>
+        <td>{{ game.homeTeam.name }}</td>
+        <td>{{ game.homeTeamGoals }}</td>
+        <td>{{ game.roadTeamGoals }}</td>
+        <td>{{ game.roadTeam.name }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
